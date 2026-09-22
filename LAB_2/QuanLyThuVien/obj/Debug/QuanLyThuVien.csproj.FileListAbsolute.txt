@@ -1,0 +1,32 @@
+C:\Users\HUU BANG\source\repos\QuanLyThuVien\QuanLyThuVien\bin\Debug\QuanLyThuVien.exe.config
+C:\Users\HUU BANG\source\repos\QuanLyThuVien\QuanLyThuVien\bin\Debug\QuanLyThuVien.exe
+C:\Users\HUU BANG\source\repos\QuanLyThuVien\QuanLyThuVien\bin\Debug\QuanLyThuVien.pdb
+C:\Users\HUU BANG\source\repos\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.csproj.AssemblyReference.cache
+C:\Users\HUU BANG\source\repos\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.Forms.FrmMain.resources
+C:\Users\HUU BANG\source\repos\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.Forms.FrmSach.resources
+C:\Users\HUU BANG\source\repos\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.Properties.Resources.resources
+C:\Users\HUU BANG\source\repos\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.csproj.GenerateResource.cache
+C:\Users\HUU BANG\source\repos\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.csproj.CoreCompileInputs.cache
+C:\Users\HUU BANG\source\repos\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.exe
+C:\Users\HUU BANG\source\repos\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.pdb
+C:\Users\HUU BANG\source\repos\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.Forms.FrmDanhMuc.resources
+C:\Users\HUU BANG\source\repos\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.Forms.FrmDocGia.resources
+C:\Users\HUU BANG\source\repos\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.Forms.FrmMuonTra.resources
+C:\Users\HUU BANG\source\repos\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.Forms.FrmThongKe.resources
+C:\Users\HUU BANG\source\repos\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.exe.config
+C:\Users\ASUS\source\repos\QuanLyThuVien\QuanLyThuVien\bin\Debug\QuanLyThuVien.exe.config
+C:\Users\ASUS\source\repos\QuanLyThuVien\QuanLyThuVien\bin\Debug\QuanLyThuVien.exe
+C:\Users\ASUS\source\repos\QuanLyThuVien\QuanLyThuVien\bin\Debug\QuanLyThuVien.pdb
+C:\Users\ASUS\source\repos\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.csproj.AssemblyReference.cache
+C:\Users\ASUS\source\repos\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.exe.config
+C:\Users\ASUS\source\repos\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.Forms.FrmDanhMuc.resources
+C:\Users\ASUS\source\repos\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.Forms.FrmDocGia.resources
+C:\Users\ASUS\source\repos\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.Forms.FrmMain.resources
+C:\Users\ASUS\source\repos\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.Forms.FrmMuonTra.resources
+C:\Users\ASUS\source\repos\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.Forms.FrmSach.resources
+C:\Users\ASUS\source\repos\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.Forms.FrmThongKe.resources
+C:\Users\ASUS\source\repos\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.Properties.Resources.resources
+C:\Users\ASUS\source\repos\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.csproj.GenerateResource.cache
+C:\Users\ASUS\source\repos\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.csproj.CoreCompileInputs.cache
+C:\Users\ASUS\source\repos\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.exe
+C:\Users\ASUS\source\repos\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.pdb
