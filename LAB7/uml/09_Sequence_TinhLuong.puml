@@ -1,0 +1,26 @@
+@startuml
+actor "Kế toán" as U
+boundary "FrmMain" as UI
+control "HrService" as S
+database "SQL Server" as DB
+U -> UI : Tính lương tháng/năm
+UI -> S : calculatePayroll(thang,nam,gioChuan)
+S -> DB : BEGIN / SELECT bảng lương
+alt Bảng lương đã tồn tại
+ S --> UI : Từ chối ghi đè
+else Chưa có
+ S -> DB : INSERT BangLuong
+ S -> DB : SELECT QĐ lương, công,\nphụ trội, thưởng, phạt, BH
+ loop từng nhân viên
+  S -> S : Tính thực lĩnh
+  S -> DB : INSERT ChiTietLuong
+ end
+ alt Thành công
+  S -> DB : COMMIT
+  UI --> U : Thông báo số NV
+ else Thất bại
+  S -> DB : ROLLBACK
+  UI --> U : Báo lỗi
+ end
+end
+@enduml

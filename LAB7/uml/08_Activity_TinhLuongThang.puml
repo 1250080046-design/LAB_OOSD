@@ -1,0 +1,28 @@
+@startuml
+start
+:Chọn tháng, năm, giờ chuẩn;
+:Kiểm tra bảng lương đã tồn tại;
+if (Đã có?) then (Có)
+ :Từ chối ghi đè;
+ stop
+endif
+:BEGIN TRANSACTION;
+:Đọc QĐ lương / chức vụ\nhiệu lực;
+:Đọc chấm công và phụ trội;
+:Đọc phiếu thưởng/phạt\nqua lương;
+:Kiểm tra BH dài hạn;
+if (Thiếu hồ sơ BH?) then (Có)
+ :ROLLBACK;
+ stop
+endif
+:Quy đổi lương giờ;
+:Tính giờ thực tế,\nphụ trội × 1,5, phụ cấp;
+:Trừ bảo hiểm và khoản phạt;
+:Lưu bảng lương + chi tiết;
+if (SQL thành công?) then (Có)
+ :COMMIT;
+else (Không)
+ :ROLLBACK;
+endif
+stop
+@enduml

@@ -1,0 +1,29 @@
+@startuml
+left to right direction
+skinparam actorStyle awesome
+actor "Nhân sự" as HR
+actor "Trưởng đơn vị" as Head
+rectangle "TUYỂN DỤNG → THỬ VIỆC → KÝ HỢP ĐỒNG" {
+ usecase "Tiếp nhận người\ntrúng tuyển" as A
+ usecase "Chọn phòng ban" as B
+ usecase "Lập quyết định\ntuyển dụng" as C
+ usecase "Ghi thời hạn\nvà lương thử việc" as D
+ usecase "Theo dõi và\nđánh giá thử việc" as E
+ usecase "Xác nhận đạt" as F
+ usecase "Ký hợp đồng\nchính thức" as G
+ usecase "Chọn hợp đồng\ndài/ngắn hạn" as H
+ usecase "Ra QĐ lương\nvà chức vụ" as I
+ usecase "Lập hồ sơ BHXH/BHYT" as J
+}
+HR --> A
+HR --> C
+HR --> E
+Head --> E
+HR --> G
+A ..> B : <<include>>
+C ..> D : <<include>>
+G ..> F : <<include>>
+G ..> H : <<include>>
+G ..> I : <<include>>
+J ..> G : <<extend>>\n[nếu dài hạn]
+@enduml

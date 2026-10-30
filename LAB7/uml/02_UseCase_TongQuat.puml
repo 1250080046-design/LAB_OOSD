@@ -1,0 +1,36 @@
+@startuml
+left to right direction
+skinparam actorStyle awesome
+actor "Nhân sự" as HR
+actor "Trưởng đơn vị" as Head
+actor "Ban chấm công" as Time
+actor "Kế toán lương" as Pay
+actor "Giám đốc" as Dir
+rectangle "HỆ THỐNG QUẢN LÝ NHÂN SỰ SƠN ĐÔNG Á" {
+ usecase "Quản lý phòng ban /\nnhân viên" as UC1
+ usecase "Tuyển dụng và\nthử việc" as UC2
+ usecase "Hợp đồng và\nbảo hiểm" as UC3
+ usecase "Quyết định lương\nvà chức vụ" as UC4
+ usecase "Lập kế hoạch\nlàm việc tuần" as UC5
+ usecase "Chấm công" as UC6
+ usecase "Ghi nhận\nphụ trội" as UC7
+ usecase "Khen thưởng\nvà kỷ luật" as UC8
+ usecase "Lập phiếu\nthu / chi" as UC9
+ usecase "Tính lương tháng" as UC10
+ usecase "Tra cứu bảng lương" as UC11
+}
+HR --> UC1
+HR --> UC2
+HR --> UC3
+HR --> UC4
+Head --> UC5
+Time --> UC6
+Time --> UC7
+Dir --> UC8
+Pay --> UC9
+Pay --> UC10
+Pay --> UC11
+UC8 ..> UC9 : <<include>>
+UC10 ..> UC6 : <<include>>
+UC10 ..> UC7 : <<include>>
+@enduml

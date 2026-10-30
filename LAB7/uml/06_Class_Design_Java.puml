@@ -1,0 +1,54 @@
+@startuml
+left to right direction
+skinparam classAttributeIconSize 0
+package forms {
+ class FrmMain
+ abstract class FrmNghiepVu {
+  #FrmNghiepVu(title,domain,tables)
+  -workflowPanel(): JPanel
+  -crudPanel(module): JPanel
+ }
+ class FrmNhanVien
+ class FrmTuyenDung
+ class FrmHopDongBaoHiem
+ class FrmLuongChucVu
+ class FrmKeHoach
+ class FrmChamCong
+ class FrmThuongKyLuat
+ class FrmBangLuong
+ FrmNghiepVu <|-- FrmNhanVien
+ FrmNghiepVu <|-- FrmTuyenDung
+ FrmNghiepVu <|-- FrmHopDongBaoHiem
+ FrmNghiepVu <|-- FrmLuongChucVu
+ FrmNghiepVu <|-- FrmKeHoach
+ FrmNghiepVu <|-- FrmChamCong
+ FrmNghiepVu <|-- FrmThuongKyLuat
+ FrmNghiepVu <|-- FrmBangLuong
+}
+package service {
+ class Module
+ class CrudService
+ class HrService {
+  +hire(...): int
+  +confirmEmployment(...): void
+  +createInsurance(...): int
+  +rewardDecision(...): int
+  +allocateCollectiveDecision(...): void
+  +calculatePayroll(...): int
+ }
+ class WorkforceService
+ class PayrollMath
+}
+package data {
+ class Db {+connect(): Connection}
+}
+FrmMain --> FrmNghiepVu
+FrmNghiepVu --> Module
+FrmNghiepVu --> CrudService
+FrmNghiepVu --> HrService
+FrmNghiepVu --> WorkforceService
+HrService --> PayrollMath
+CrudService --> Db
+HrService --> Db
+WorkforceService --> Db
+@enduml

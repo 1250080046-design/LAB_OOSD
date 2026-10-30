@@ -1,0 +1,7 @@
+@startuml
+[*] --> THU_VIEC : Có QĐ tuyển dụng
+THU_VIEC --> CHINH_THUC : Đạt thử việc / ký HĐ
+THU_VIEC --> NGHI_VIEC : Không đạt
+CHINH_THUC --> NGHI_VIEC : Thôi việc
+NGHI_VIEC --> [*]
+@enduml

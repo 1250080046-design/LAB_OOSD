@@ -1,0 +1,26 @@
+@startuml
+start
+:Nhân sự tiếp nhận hồ sơ;
+:Chọn phòng ban tuyển dụng;
+:Nhập quyết định, mức lương\nvà thời gian thử việc;
+if (Thông tin hợp lệ?) then (Có)
+ :Lưu nhân viên và QĐ thử việc\ntrong transaction;
+else (Không)
+ :Thông báo lỗi;
+ stop
+endif
+:Theo dõi quá trình thử việc;
+:Trưởng phòng đánh giá;
+if (Đạt thử việc?) then (Có)
+ :Nhân sự lập hợp đồng;
+ :Lập QĐ lương và chức vụ;
+ if (Hợp đồng dài hạn?) then (Có)
+  :Lập hồ sơ BHXH và BHYT;
+ endif
+ :Cập nhật nhân viên chính thức;
+ :Xác nhận transaction;
+else (Không)
+ :Ghi không đạt;
+endif
+stop
+@enduml

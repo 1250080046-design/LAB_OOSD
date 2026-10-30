@@ -1,0 +1,26 @@
+@startuml
+actor "Nhân sự / Giám đốc" as U
+boundary "FrmMain" as UI
+control "HrService" as S
+database "SQL Server" as DB
+U -> UI : Nhập quyết định (cá nhân / tập thể)
+UI -> S : rewardDecision(...)
+S -> S : Kiểm tra đối tượng, số tiền, người ký
+S -> DB : BEGIN TRANSACTION
+S -> DB : INSERT QuyetDinhThuongPhat
+DB --> S : MaQD
+alt Cá nhân
+ S -> DB : INSERT PhieuThuChi (chưa thực hiện)
+else Tập thể
+ S -> S : Chờ phân bổ phiếu theo nhân viên
+end
+alt Thành công
+ S -> DB : COMMIT
+ S --> UI : Mã quyết định
+ UI --> U : Thông báo thành công
+else Lỗi dữ liệu / SQL
+ S -> DB : ROLLBACK
+ S --> UI : Thông báo lỗi
+ UI --> U : Yêu cầu sửa dữ liệu
+end
+@enduml

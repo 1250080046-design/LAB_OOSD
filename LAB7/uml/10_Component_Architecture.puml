@@ -1,0 +1,16 @@
+@startuml
+left to right direction
+package "forms" { [FrmMain] as Main; [8 Form nghiệp vụ] as Forms }
+package "service" { [HrService] as HR; [WorkforceService] as Workforce; [CrudService] as Crud; [PayrollMath] as Math }
+package "data" { [Db / JDBC] as JDBC }
+database "SQL Server" as SQL
+Main --> Forms
+Forms --> HR
+Forms --> Workforce
+Forms --> Crud
+HR --> Math
+HR --> JDBC
+Workforce --> JDBC
+Crud --> JDBC
+JDBC --> SQL
+@enduml

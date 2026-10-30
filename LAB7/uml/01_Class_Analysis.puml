@@ -1,0 +1,42 @@
+@startuml
+left to right direction
+skinparam classAttributeIconSize 0
+class PhongBan { +maPhong: int <<ID>>; +tenPhong: String }
+class NhanVien { +maNV: int <<ID>>; +hoTen: String; +trangThai: String; +dangKyThuViec(); +kyHopDong() }
+class QuyetDinhTuyenDung { +maQDTD: int <<ID>>; +tuNgay: Date; +denNgay: Date; +luongThuViec: Decimal; +danhGia() }
+class HopDong { +maHD: int <<ID>>; +loai: String; +tuNgay: Date; +denNgay: Date }
+class HoSoBaoHiem { +maBH: int <<ID>>; +tyLeBHXH: Decimal; +tyLeBHYT: Decimal }
+class QuyetDinhLuong { +maQDL: int <<ID>>; +luongCoBan: Decimal; +hieuLucTu: Date }
+class QuyetDinhChucVu { +maQDCV: int <<ID>>; +phuCapChucVu: Decimal }
+class ChucVu { +maChucVu: int <<ID>>; +ten: String }
+class KeHoachTuan { +maKH: int <<ID>>; +tuanBatDau: Date }
+class PhanCongCa { +maPC: int <<ID>>; +ngayLam: Date }
+class CaLamViec { +maCa: int <<ID>>; +gioBatDau: Time; +gioKetThuc: Time }
+class ChamCong { +maCC: int <<ID>>; +ngayCong: Date; +gioThucTe: Decimal }
+class PhieuPhuTroi { +maPhieu: int <<ID>>; +ngayPhuTroi: Date; +soGio: Decimal; +hinhThuc: String }
+class ChiTietPhuTroi { +maCT: int <<ID>>; +soGioThamGia: Decimal }
+class QuyetDinhThuongPhat { +maQD: int <<ID>>; +loai: String; +doiTuong: String; +soTien: Decimal }
+class PhieuThuChi { +maPhieuTC: int <<ID>>; +soTien: Decimal }
+class BangLuong { +maBangLuong: int <<ID>>; +thang: int; +nam: int; +tinhLuong() }
+class ChiTietLuong { +maCTL: int <<ID>>; +thucLinh: Decimal }
+PhongBan "1" -- "0..*" NhanVien
+PhongBan "1" -- "0..*" KeHoachTuan
+NhanVien "1" -- "0..*" QuyetDinhTuyenDung
+NhanVien "1" -- "0..*" HopDong
+HopDong "1" -- "0..*" HoSoBaoHiem
+NhanVien "1" -- "0..*" QuyetDinhLuong
+NhanVien "1" -- "0..*" QuyetDinhChucVu
+ChucVu "1" -- "0..*" QuyetDinhChucVu
+KeHoachTuan "1" -- "0..*" PhanCongCa
+NhanVien "1" -- "0..*" PhanCongCa
+CaLamViec "1" -- "0..*" PhanCongCa
+NhanVien "1" -- "0..*" ChamCong
+CaLamViec "1" -- "0..*" ChamCong
+PhieuPhuTroi "1" -- "1..*" ChiTietPhuTroi
+NhanVien "1" -- "0..*" ChiTietPhuTroi
+NhanVien "0..1" -- "0..*" QuyetDinhThuongPhat
+PhongBan "0..1" -- "0..*" QuyetDinhThuongPhat
+QuyetDinhThuongPhat "1" -- "0..*" PhieuThuChi
+BangLuong "1" *-- "0..*" ChiTietLuong
+NhanVien "1" -- "0..*" ChiTietLuong
+@enduml
