@@ -1,0 +1,33 @@
+@startuml Cau2_QuanHeLop
+left to right direction
+skinparam classAttributeIconSize 0
+hide methods
+class Tang
+class VanPhong
+class KhachHang
+class HopDong
+class ChiTietHopDong
+class HoaDon
+class ThanhToan
+class DichVu
+class SuDungDichVu
+class GiaHan
+class NhanVienVanPhong
+class TheGiuXe
+class KiemTraPhong
+Tang "1" -- "0..*" VanPhong
+KhachHang "1" -- "0..*" HopDong
+HopDong "1" *-- "1..*" ChiTietHopDong
+VanPhong "1" -- "0..*" ChiTietHopDong
+HopDong "1" -- "0..*" HoaDon
+HoaDon "1" *-- "0..*" ThanhToan
+DichVu "1" -- "0..*" SuDungDichVu
+VanPhong "1" -- "0..*" SuDungDichVu
+HopDong "1" -- "0..*" SuDungDichVu
+HopDong "1" -- "0..*" GiaHan
+VanPhong "1" -- "0..*" GiaHan
+KhachHang "1" -- "0..*" NhanVienVanPhong
+VanPhong "1" -- "0..*" NhanVienVanPhong
+NhanVienVanPhong "1" -- "0..*" TheGiuXe
+VanPhong "1" -- "0..*" KiemTraPhong
+@enduml

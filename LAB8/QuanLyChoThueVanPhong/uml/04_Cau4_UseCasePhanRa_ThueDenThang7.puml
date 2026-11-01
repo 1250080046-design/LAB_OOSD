@@ -1,0 +1,39 @@
+@startuml Cau4_UseCasePhanRa
+left to right direction
+skinparam actorStyle awesome
+actor "Khách thuê" as K
+actor "Bộ phận quản lý" as M
+actor "Kế toán" as T
+rectangle "Quy trình ký hợp đồng → tháng 7+ → dịch vụ" {
+ usecase "Lập hợp đồng" as A
+ usecase "Chọn một/nhiều phòng" as B
+ usecase "Kiểm tra thuê >= 6 tháng" as C
+ usecase "Kiểm tra trùng lịch" as D
+ usecase "Chốt giá thuê" as E
+ usecase "Lập hóa đơn 6 tháng đầu" as F
+ usecase "Thu trước 6 tháng" as G
+ usecase "Tính tiền thuê tháng 7+" as H
+ usecase "Lập hóa đơn thuê đầu kỳ" as I
+ usecase "Thu tiền thuê đầu kỳ" as J
+ usecase "Ghi nhận điện/nước/internet" as L
+ usecase "Chốt hóa đơn dịch vụ cuối kỳ" as N
+ usecase "Thu tiền dịch vụ" as O
+ }
+K --> A
+M --> A
+A ..> B : <<include>>
+A ..> C : <<include>>
+A ..> D : <<include>>
+A ..> E : <<include>>
+A ..> F : <<include>>
+F ..> G : <<include>>
+T --> G
+T --> H
+H ..> I : <<include>>
+I ..> J : <<include>>
+T --> J
+T --> L
+T --> N
+N ..> L : <<include>>
+T --> O
+@enduml

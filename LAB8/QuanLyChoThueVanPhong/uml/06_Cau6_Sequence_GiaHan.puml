@@ -1,0 +1,24 @@
+@startuml Cau6_SequenceGiaHan
+actor "Nhân viên quản lý" as NV
+boundary "FrmGiaHan" as UI
+control "OfficeService" as S
+database "SQL Server / sp_GiaHan" as DB
+NV -> UI: Chọn hợp đồng, phòng, số tháng
+UI -> S: extend(maHD, maPhong, soThang, ngayLap)
+S -> DB: BEGIN TRAN; khóa hợp đồng
+DB -> DB: Kiểm tra phòng thuộc hợp đồng
+DB -> DB: Kiểm tra <= 1/2 số tháng gốc
+DB -> DB: Kiểm tra hóa đơn chưa trả đủ
+DB -> DB: Kiểm tra dịch vụ đến kỳ chưa lập hóa đơn
+alt Không đạt điều kiện / còn nợ
+ DB --> S: THROW; ROLLBACK
+ S --> UI: Trả lỗi
+ UI --> NV: Hiển thị lỗi; giữ ô đã nhập
+else Hợp lệ
+ DB -> DB: Kiểm tra lịch trùng và ghi GiaHan
+ DB -> DB: Cập nhật ngày kết thúc; COMMIT
+ DB --> S: Mã phiếu gia hạn
+ S --> UI: Thành công
+ UI --> NV: Hiển thị kết quả
+end
+@enduml

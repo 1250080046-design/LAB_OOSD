@@ -1,0 +1,32 @@
+@startuml Cau5_Activity
+start
+:Khách chọn một hoặc nhiều phòng;
+:Nhập khách hàng, ngày bắt đầu, số tháng;
+if (Ít nhất 6 tháng?) then (Có)
+else (Không)
+ :Thông báo điều kiện thuê;
+ stop
+endif
+if (Phòng trống trong toàn kỳ?) then (Có)
+else (Không)
+ :Từ chối trùng lịch;
+ stop
+endif
+:Ký hợp đồng, lưu chi tiết phòng;
+:Tạo hóa đơn thuê 6 tháng đầu;
+:Thu đủ 6 tháng ngay khi ký;
+:COMMIT giao dịch;
+:Theo dõi các tháng 1 đến 6;
+if (Có tháng 7 trở đi?) then (Có)
+ :Đầu mỗi tháng từ tháng 7;
+ :Lập hóa đơn thuê tháng;
+ :Thu tiền thuê đầu kỳ;
+endif
+if (Có phát sinh dịch vụ?) then (Có)
+ :Ghi nhận số lượng và đơn giá;
+ :Cuối tháng lập hóa đơn dịch vụ;
+ :Khách thanh toán hóa đơn dịch vụ;
+endif
+:Kiểm tra công nợ;
+stop
+@enduml

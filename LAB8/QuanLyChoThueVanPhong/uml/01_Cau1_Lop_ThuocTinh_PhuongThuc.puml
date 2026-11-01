@@ -1,0 +1,69 @@
+@startuml Cau1_LopDinhDanh
+skinparam classAttributeIconSize 0
+class Tang { +MaTang: int <<PK>>
+ +TenTang: String
+ +DoCao: int
+ +themTang()
+ +capNhat() }
+class VanPhong { +MaPhong: int <<PK>>
+ +MaTang: int <<FK>>
+ +SoPhong: String <<UNIQUE>>
+ +DienTich: decimal
+ +DonGiaThang: decimal
+ +Huong: String
+ +kiemTraSanSang() }
+class KhachHang { +MaKH: int <<PK>>
+ +MaSoThue: String <<UNIQUE>>
+ +TenCongTy: String
+ +DaiDien: String
+ +kyHopDong() }
+class HopDong { +MaHD: int <<PK>>
+ +SoHopDong: String <<UNIQUE>>
+ +MaKH: int <<FK>>
+ +NgayBatDau: Date
+ +SoThang: int
+ +kiemTraToiThieu6Thang() }
+class ChiTietHopDong { +MaCTHD: int <<PK>>
+ +MaHD: int <<FK>>
+ +MaPhong: int <<FK>>
+ +GiaThueThang: decimal }
+class HoaDon { +MaHoaDon: int <<PK>>
+ +MaHD: int <<FK>>
+ +Loai: String
+ +KyNam: int
+ +KyThang: int
+ +TongTien: decimal
+ +tinhConNo() }
+class ThanhToan { +MaThanhToan: int <<PK>>
+ +MaHoaDon: int <<FK>>
+ +SoTien: decimal
+ +NgayThanhToan: Date
+ +thuTien() }
+class DichVu { +MaDV: int <<PK>>
+ +TenDV: String
+ +DonGia: decimal }
+class SuDungDichVu { +MaSuDung: int <<PK>>
+ +MaHD: int <<FK>>
+ +MaPhong: int <<FK>>
+ +MaDV: int <<FK>>
+ +SoLuong: decimal }
+class GiaHan { +MaGiaHan: int <<PK>>
+ +MaHD: int <<FK>>
+ +MaPhong: int <<FK>>
+ +SoThangGiaHan: int
+ +kiemTraNo() }
+class NhanVienVanPhong { +MaNV: int <<PK>>
+ +MaKH: int <<FK>>
+ +MaPhong: int <<FK>>
+ +HoTen: String
+ +HinhAnh: String }
+class TheGiuXe { +MaThe: int <<PK>>
+ +MaNV: int <<FK>>
+ +SoThe: String <<UNIQUE>>
+ +BienSo: String }
+class KiemTraPhong { +MaKiemTra: int <<PK>>
+ +MaPhong: int <<FK>>
+ +NgayKiemTra: Date
+ +TuYSuaDoi: bool
+ +SoTienPhat: decimal }
+@enduml

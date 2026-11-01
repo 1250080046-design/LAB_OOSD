@@ -1,0 +1,13 @@
+MaYC,QuyTac,SoDo,Form,Service_StoredProcedure,BangCSDL,TestCase
+BR01,Tầng phòng mã duy nhất,01-02,FrmTangVanPhong,CrudService,Tang-VanPhong,TC01
+BR02,Ít nhất 6 tháng,03-05,FrmHopDong,OfficeService-sp_TaoHopDong,HopDong,TC02-TC03
+BR03,Nhiều phòng một hợp đồng,02-05,FrmHopDong,OfficeService-sp_TaoHopDong,ChiTietHopDong,TC04
+BR04,Thanh toán trước 6 tháng,04-05,FrmHopDong,OfficeService-sp_TaoHopDong,HoaDon-ThanhToan,TC03-TC06
+BR05,Thu tiền thuê tháng 7 đầu kỳ,04-05,FrmThanhToan,OfficeService-sp_LapHoaDonThueThang,HoaDon,TC07-TC09
+BR06,Dịch vụ cuối tháng,04-05,FrmDichVu,OfficeService-sp_LapHoaDonDichVu,SuDungDichVu-HoaDon,TC10-TC11
+BR07,Gia hạn không quá nửa thời gian thuê,06,FrmGiaHan,OfficeService-sp_GiaHan,GiaHan-HopDong,TC14
+BR08,Gia hạn không còn nợ,06,FrmGiaHan,OfficeService-sp_GiaHan,HoaDon-ThanhToan,TC15-TC17
+BR09,Nhân viên công ty thuê,01-02,FrmNhanVien,CrudService,NhanVienVanPhong,TC18
+BR10,Thẻ giữ xe nhân viên,01-02,FrmTheXe,CrudService,TheGiuXe,TC18
+BR11,Kiểm tra phòng hàng năm,01-02,FrmKiemTra,CrudService,KiemTraPhong,TC13
+BR12,Không thu vượt nợ,04-05,FrmThanhToan,OfficeService-sp_ThuTien,ThanhToan,TC12

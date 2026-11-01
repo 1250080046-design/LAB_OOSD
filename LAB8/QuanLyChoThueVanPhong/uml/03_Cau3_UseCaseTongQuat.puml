@@ -1,0 +1,43 @@
+@startuml Cau3_UseCaseTongQuat
+left to right direction
+skinparam actorStyle awesome
+actor "Khách thuê" as KH
+actor "Nhân viên quản lý" as QL
+actor "Kế toán/thu ngân" as KT
+actor "Nhân viên tòa nhà" as NV
+actor "Nhân viên kiểm tra" as KTP
+rectangle "QUẢN LÝ CHO THUÊ VĂN PHÒNG" {
+ usecase "Xem và tra cứu\nvăn phòng" as UC1
+ usecase "Quản lý tầng, phòng\nvà đơn giá" as UC2
+ usecase "Quản lý\nkhách thuê" as UC3
+ usecase "Ký hợp đồng\nnhiều phòng" as UC4
+ usecase "Thu trước\n6 tháng đầu" as UC5
+ usecase "Thu tiền thuê\ntừ tháng 7" as UC6
+ usecase "Ghi nhận dịch vụ\nvà lập hóa đơn" as UC7
+ usecase "Thanh toán\nhóa đơn" as UC8
+ usecase "Lập phiếu\ngia hạn" as UC9
+ usecase "Quản lý nhân viên\ncủa công ty thuê" as UC10
+ usecase "Cấp thẻ\ngiữ xe" as UC11
+ usecase "Kiểm tra phòng\nđịnh kỳ" as UC12
+ usecase "Ghi nhận vi phạm\nchỉnh sửa kết cấu" as UC13
+}
+KH --> UC1
+KH --> UC4
+KH --> UC9
+QL --> UC2
+QL --> UC3
+QL --> UC4
+QL --> UC9
+QL --> UC10
+KT --> UC5
+KT --> UC6
+KT --> UC7
+KT --> UC8
+NV --> UC11
+KTP --> UC12
+KTP --> UC13
+UC4 ..> UC5 : <<include>>
+UC6 ..> UC8 : <<include>>
+UC7 ..> UC8 : <<include>>
+UC9 ..> UC8 : <<include>>
+@enduml

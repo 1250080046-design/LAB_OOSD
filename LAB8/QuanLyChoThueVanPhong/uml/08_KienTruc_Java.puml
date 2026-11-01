@@ -1,0 +1,12 @@
+@startuml KienTruc
+skinparam componentStyle rectangle
+component "FrmMain và 9 Form module\nJava Swing" as UI
+component "FrmTable + FormInputs\nCRUD + ComboBox + giữ dữ liệu" as F
+component "OfficeService / CrudService" as S
+component "Db.java (JDBC)" as DB
+ database "SQL Server\n13 bảng + 5 stored procedures" as SQL
+UI --> F
+F --> S
+S --> DB
+DB --> SQL
+@enduml

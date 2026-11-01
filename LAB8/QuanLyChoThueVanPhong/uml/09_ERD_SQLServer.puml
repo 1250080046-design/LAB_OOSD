@@ -1,0 +1,63 @@
+@startuml ERD_CSDL
+hide circle
+skinparam linetype ortho
+entity Tang { * MaTang : INT <<PK>>
+--
+ TenTang : NVARCHAR(80) }
+entity VanPhong { * MaPhong : INT <<PK>>
+--
+ * MaTang : INT <<FK>>
+ * SoPhong : NVARCHAR(30) <<UQ>> }
+entity KhachHang { * MaKH : INT <<PK>>
+--
+ * MaSoThue : NVARCHAR(30) <<UQ>> }
+entity HopDong { * MaHD : INT <<PK>>
+--
+ * MaKH : INT <<FK>>
+ * SoThang : INT }
+entity ChiTietHopDong { * MaCTHD : INT <<PK>>
+--
+ * MaHD : INT <<FK>>
+ * MaPhong : INT <<FK>> }
+entity HoaDon { * MaHoaDon : INT <<PK>>
+--
+ * MaHD : INT <<FK>> }
+entity ThanhToan { * MaThanhToan : INT <<PK>>
+--
+ * MaHoaDon : INT <<FK>> }
+entity DichVu { * MaDV : INT <<PK>> }
+entity SuDungDichVu { * MaSuDung : INT <<PK>>
+--
+ * MaHD : INT <<FK>>
+ * MaPhong : INT <<FK>>
+ * MaDV : INT <<FK>> }
+entity GiaHan { * MaGiaHan : INT <<PK>>
+--
+ * MaHD : INT <<FK>>
+ * MaPhong : INT <<FK>> }
+entity NhanVienVanPhong { * MaNV : INT <<PK>>
+--
+ * MaKH : INT <<FK>>
+ * MaPhong : INT <<FK>> }
+entity TheGiuXe { * MaThe : INT <<PK>>
+--
+ * MaNV : INT <<FK>> }
+entity KiemTraPhong { * MaKiemTra : INT <<PK>>
+--
+ * MaPhong : INT <<FK>> }
+Tang ||--o{ VanPhong
+KhachHang ||--o{ HopDong
+HopDong ||--o{ ChiTietHopDong
+VanPhong ||--o{ ChiTietHopDong
+HopDong ||--o{ HoaDon
+HoaDon ||--o{ ThanhToan
+HopDong ||--o{ SuDungDichVu
+VanPhong ||--o{ SuDungDichVu
+DichVu ||--o{ SuDungDichVu
+HopDong ||--o{ GiaHan
+VanPhong ||--o{ GiaHan
+KhachHang ||--o{ NhanVienVanPhong
+VanPhong ||--o{ NhanVienVanPhong
+NhanVienVanPhong ||--o{ TheGiuXe
+VanPhong ||--o{ KiemTraPhong
+@enduml

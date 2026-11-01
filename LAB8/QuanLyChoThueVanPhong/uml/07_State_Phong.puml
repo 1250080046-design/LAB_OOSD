@@ -1,0 +1,8 @@
+@startuml TrangThaiPhong
+[*] --> TRONG
+TRONG --> DANG_THUE : ký HĐ + thu 6 tháng
+TRONG --> BAO_TRI : kiểm tra cần sửa
+DANG_THUE --> TRONG : hết hạn / bàn giao
+DANG_THUE --> BAO_TRI : thanh lý / sửa chữa
+BAO_TRI --> TRONG : hoàn tất sửa
+@enduml
